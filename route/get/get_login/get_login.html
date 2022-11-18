@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yapılacaklar Listesi</title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/font/bootstrap-icons.min.css">
+
+        <style>{{{css}}}</style>
+    </head>
+
+    <body>
+        <div id="login">
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        {{#error}}
+                            <div class="alert alert-danger my-3 shadow">
+                                {{message}}
+                            </div>
+                        {{/error}}
+                        <div id="login-box" class="col-md-12 bg-light shadow">
+                            <form id="login-form" class="form" action="login" method="post">
+                                <div class="form-group">
+                                    <label for="username">Kullanıcı Adı:</label><br>
+                                    <input required type="text" name="username" id="username" class="form-control" value="{{payload.username}}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Parola:</label><br>
+                                    <input required type="password" name="password" id="password" class="form-control" value="{{payload.password}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" class="btn btn-dark btn-lg mt-3 w-100" value="Giriş">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
